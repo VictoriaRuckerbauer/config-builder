@@ -176,6 +176,32 @@
                     </execution>
                 </executions>
             </plugin>
+            <plugin>
+                <groupId>org.pitest</groupId>
+                <artifactId>pitest-maven</artifactId>
+                <version>1.17.0</version>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.pitest</groupId>
+                        <artifactId>pitest-junit5-plugin</artifactId>
+                        <version>1.2.1</version>
+                    </dependency>
+                </dependencies>
+                <configuration>
+                    <targetClasses>
+                        <param>com.tngtech.configbuilder.*</param>
+                    </targetClasses>
+                    <targetTests>
+                        <param>com.tngtech.configbuilder.*Test</param>
+                        <param>com.tngtech.configbuilder.*Tests</param>
+                    </targetTests>
+                    <fullMutationMatrix>true</fullMutationMatrix>
+                    <outputFormats>
+                        <param>XML</param>
+                        <param>HTML</param>
+                    </outputFormats>
+                </configuration>
+            </plugin>
 
             <!-- report-->
             <plugin>
